@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - EduGo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body class="login-body">
+    <div class="navbar">
+        <div class="logo">
+            <img src="Logos/EduGO.png" alt="EduGo Logo">
+        </div>
+    </div>
+    <div class="login-page-container">
+        <div class="login-card">
+            <p class="card-caption">Porfavor Ingrese sus datos</p>
+            <h1 class="card-title">Iniciar Sesión</h1>
+            
+            <form class="login-form">
+                <label for="email" class="visually-hidden">Correo Electronico</label>
+                <input type="email" id="email" name="email" placeholder="Correo Electronico" required>
+                
+                <label for="password" class="visually-hidden">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                
+                <button type="submit" class="login-button">Iniciar Sesión</button>
+            </form>
+            
+            <p class="signup-link">
+                ¿No tienes una cuenta? <a href="resgistrer.html" class="create-account-link">Crear una cuenta</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta - EduGo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body class="registration-body">
+    <div class="navbar">
+        <div class="logo">
+            <img src="Logos/EduGO.png" alt="EduGo Logo">
+        </div>
+    </div>
+
+    <div class="registration-card">
+        <h1 class="card-title">Crear cuenta</h1>
+        
+        <form class="registration-form">
+            <label for="nombre" class="visually-hidden">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+
+            <label for="apellido" class="visually-hidden">Apellido</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+            
+            <label for="email" class="visually-hidden">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+            
+            <label for="password" class="visually-hidden">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <p class="input-description">Mínimo 8 caracteres</p>
+
+            <label for="confirm-password" class="visually-hidden">Confirmar Contraseña</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar Contraseña" required>
+
+            <label for="plan" class="visually-hidden">Seleccionar Plan</label>
+            <select id="plan" name="plan" required>
+                <option value="" disabled selected>Seleccionar Plan</option>
+                <option value="basico">Plan Básico</option>
+                <option value="profesor">Plan Profesor</option>
+                <option value="profesional">Plan Profesional</option>
+            </select>
+            
+            <button type="submit" class="register-button">Registrar</button>
+        </form>
+        
+        <p class="login-link">
+            <a href="Login.html" class="already-have-account-link">¡Ya poseo cuenta!</a>
+        </p>
+    </div>
+</body>
+</html>

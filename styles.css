@@ -576,3 +576,233 @@ input[type="password"] {
         margin: 0 20px;
     }
 }
+
+/*estilos de Payment.html*/
+
+/* Importar una fuente similar a la de la imagen (usaré Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap'); /* Fuente para el logo */
+
+:root {
+    --primary-red: #ff4a64; /* Color rojo del header y botón */
+    --light-gray: #f2f2f2; /* Color de fondo */
+    --text-dark: #333;
+    --text-gray: #666;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 60px; /* Espacio para la barra de navegación fija */
+}
+
+/* --- Estilos del Header (Barra Superior) --- */
+
+.top-bar {
+    width: 100%;
+    background-color: var(--primary-red);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px; /* Mantener el padding horizontal */
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de otro contenido */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+    margin-right: 5px;
+}
+
+/* --- Contenedor Principal de Pago --- */
+
+.payment-container {
+    width: 90%;
+    max-width: 400px; /* Ancho máximo para centrar el contenido */
+    text-align: center;
+    padding-top: 50px; /* Espacio desde el header */
+}
+
+/* --- Estilos del Logo Central (EduGo) --- */
+
+.main-logo-center {
+    margin-bottom: 20px;
+    line-height: 1; /* Para ajustar la tipografía */
+}
+
+.edu-logo, .go-logo {
+    font-family: 'Roboto Slab', serif; /* Fuente distintiva para el logo */
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 0.8; /* Acercar las líneas */
+    display: flex;
+    justify-content: center;
+}
+
+.edu-logo {
+    color: #888; /* Color base gris */
+}
+
+.e { color: #a0a0a0; }
+.d { color: #888; }
+.u-underline { 
+    color: #ffaa33; /* Color naranja/amarillo */
+    border-bottom: 5px solid var(--primary-red); /* Línea roja debajo de 'u' */
+    padding-bottom: 2px; /* Ajuste para la línea */
+}
+
+.go-logo {
+    color: var(--text-dark);
+    font-size: 3.5rem;
+    margin-top: 5px;
+}
+
+
+/* --- Títulos --- */
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+/* --- Tarjetas Aceptadas --- */
+
+.accepted-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.accepted-cards p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.card-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Simulación de íconos de tarjetas */
+.visa-icon {
+    background-color: #1a1f71;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 3px 5px;
+    border-radius: 3px;
+    /* Efecto 'V' de Visa */
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+}
+
+.mastercard-icon {
+    width: 30px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 75% 50%, #ff5f00 50%, transparent 50%),
+                radial-gradient(circle at 25% 50%, #eb001b 50%, transparent 50%);
+    background-position: left center, right center;
+    background-size: 20px 20px, 20px 20px;
+    background-repeat: no-repeat;
+    border: 1px solid #ff5f00; /* Borde sutil */
+}
+
+/* --- Formulario --- */
+
+.payment-form {
+    text-align: left;
+}
+
+.payment-form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: border-color 0.3s;
+}
+
+.payment-form input::placeholder {
+    color: #aaa;
+}
+
+.payment-form input:focus {
+    border-color: var(--primary-red);
+    outline: none;
+}
+
+/* Campos divididos (Fecha y CVV) */
+.split-fields {
+    display: flex;
+    gap: 20px;
+}
+
+.field-group {
+    flex: 1;
+}
+
+/* Botón de Pagar */
+.pay-button {
+    width: 100%;
+    background-color: var(--primary-red);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer;
+    margin-top: 40px;
+    box-shadow: 0 4px 8px rgba(255, 74, 100, 0.4);
+    transition: background-color 0.3s;
+}
+
+.pay-button:hover {
+    background-color: #e03c54;
+}

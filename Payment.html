@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago - EduGo</title>
+    <link rel="stylesheet" href="styles.css"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="logo-container">
+            <img src="Logos/EduGO.png" alt="EduGo Logo" style="height: 40px; margin-right: 10px;">
+            
+        </div>
+    </header>
+
+    <div class="payment-container">
+        
+        <div class="main-logo-center">
+            <a href="edugo.html">
+                <img src="Logos/iMAGOTIPO 1.png" alt="EduGo Logo" style="max-width: 150px;">
+            </a>
+        </div>
+
+        <h1 class="page-title">Pago</h1>
+        
+        <h2 class="subtitle">Tarjeta de Crédito/Débitos</h2>
+        
+        <div class="accepted-cards">
+            <p>Tarjetas aceptadas</p>
+            <div class="card-icons">
+                <img src="Logos/Logos_visa.png" alt="Visa" style="height: 25px;">
+                <img src="Logos/Logo_mastercard.png" alt="Mastercard" style="height: 25px;">
+            </div>
+        </div>
+
+        <form class="payment-form">
+            
+            <label for="card-number">Número de tarjeta</label>
+            <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19" required>
+            
+            <div class="split-fields">
+                <div class="field-group">
+                    <label for="expiry-date">Fecha de expiración</label>
+                    <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5" required>
+                </div>
+                <div class="field-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="000" maxlength="3" required>
+                </div>
+            </div>
+            
+            <label for="cardholder-name">Nombre del titular</label>
+            <input type="text" id="cardholder-name" placeholder="Nombre" required>
+            
+            <button type="submit" class="pay-button">Pagar</button>
+        </form>
+    </div>
+
+    <script>
+        /* Formateo automático del número de tarjeta */
+        document.getElementById('card-number').addEventListener('input', function (e) {
+            // Elimina los espacios existentes para recalcular
+            let value = e.target.value.replace(/\s+/g, '');
+            // Agrega un espacio cada 4 dígitos
+            let formattedValue = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+            // Actualiza el valor del campo
+            e.target.value = formattedValue;
+        });
+
+        /* Formateo automático de la fecha de expiración */
+        document.getElementById('expiry-date').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, ''); // Elimina todo lo que no sea dígito
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+    </script>
+
+</body>
+</html>
